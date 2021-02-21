@@ -1,0 +1,818 @@
+艾玛 701g 
+用户名：admin   密码：admin
+用户名：SZIM    密码：SZIM
+
+艾玛701H   
+用户名：admin 密码：epicrouter
+
+Adsl Router
+用户名：anonymous   密码：12345
+
+华为 MT800
+用户名：admin   密码：admin
+
+Home Gateway
+用户名：user 密码：password
+
+Viking:
+用户名：root   密码：root
+
+TP-link
+用户名：admin   密码：admin
+
+实达2110EH ROUTER  
+用户名：user    密码：password
+用户名：root    密码：grouter
+
+神州数码/华硕：
+用户名：adsl 密码：adsl1234
+
+全向：
+用户名：root 密码：root
+
+普天/大亚：
+用户名：admin 密码：dare
+
+UT斯达康
+用户名：admin 密码：dare
+
+e-tek
+用户名:admin 密码:12345
+
+zyxel
+用户名:anonymous   密码:1234
+
+北电
+用户名:anonymous   密码:12345
+
+大恒
+用户名：admin     密码：admin
+
+大唐
+用户名：admin       密码：1234
+
+斯威特
+用户名：root      密码：root
+用户名：user       密码：user
+
+中兴
+用户名：adsl     密码：adsl831 (中兴的adsl的密码前面为adsl，后面为型号,比如中兴831，密码就是adsl831)
+成都天逸           用户名：admin          密码：epicrouter
+
+上海中达    用户名：（随意）       密码：12345
+
+品牌：ViKing
+用户名:adsl 密码:adsl1234
+品牌：实达
+版本：2110ehr v3.20、 2110ehr v3.21、 2110ehr v3.51
+用户名：admin 密码：conexant
+版本：2110ehr v4.5
+用户名：root 密码：grouter
+版本：2110eh v3.51（中文web界面）
+用户名：admin 密码：starnetadsl
+品牌：艾玛
+用户名：admin 密码：admin
+品牌：神州数码/华硕
+用户名：adsl 密码：adsl1234
+品牌：全向
+用户名：root 密码：root
+品牌：普天
+用户名：putian 密码：123456
+品牌：e-tek
+用户名:admin 密码:12345
+品牌：zyxel
+用户名:anonymous密码:1234
+品牌：北电
+用户名:anonymous 密码:12345
+品牌：大恒
+用户名：admin 密码：admin
+品牌：大唐
+用户名：admin 密码：1234
+品牌：斯威特
+用户名：root 密码：root
+用户名：user 密码：user
+品牌：中兴
+用户名：adsl 密码：adsl831
+品牌：BENQ
+用户名：user 密码：benq1234
+品牌：华硕
+用户名：ADSL 密码：adsl1234
+艾玛 701g 
+192.168.101.1  192.168.0.1 
+用户名：admin   密码：admin 
+用户名：SZIM    密码：SZIM 
+
+艾玛701H 
+用户名：admin 密码：epicrouter 
+
+实达2110EH ROUTER 
+用户名：user    密码：password 
+用户名：root    密码：grouter 
+
+神州数码/华硕： 
+用户名：adsl 密码：adsl1234 
+全向： 
+用户名：root 密码：root 
+
+普天： 
+用户名：admin 密码：dare 
+
+e-tek 
+用户名:admin 密码:12345 
+
+zyxel 
+用户名:anonymous   密码:1234 
+
+北电 
+用户名:anonymous   密码:12345 
+
+大恒 
+用户名：admin     密码：admin 
+
+大唐 
+用户名：admin       密码：1234 
+
+斯威特 
+用户名：root      密码：root 
+用户名：user       密码：user 
+中兴 
+用户名：adsl     密码：adsl831 
+同维DSL699E 
+用户名：ROOT 
+密码：ROOT 
+
+大亚DB102 
+用户名：admin 
+密码：dare 
+
+WST的RT1080 
+username:root 
+password:root 
+
+WST的ART18CX 
+username:admin 
+password:conexant 
+username:user 
+password ：assword 
+
+全向qxcomm1688 
+高端设置密码是：qxcommsuport 
+
+全向qxcomm1680 
+登陆ADSL的密码是:qxcomm1680 
+
+实达 V3.2　
+username:root 
+password:root 
+实达  V5.4　
+username:root 
+password:grouter 
+
+泛德 
+admin 
+conexant 
+
+东信Ea700 
+用户名：空 
+密码：password 
+
+broadmax的hsa300a 
+username:broadmax 
+password:broadmax 
+
+长虹ch-500E 
+username:root 
+password:root 
+
+重庆普天CP ADSL03 
+username:root 
+password:root 
+
+台湾突破EA110 
+RS232:38400 
+username SL 
+psw SL 
+
+etek-td的ADSL_T07L006.0 
+User Name: supervisor 
+Password: 12345 
+
+GVC的DSL-802E/R3A 
+username:admin 
+password:epicrouter 
+username:user 
+password assword 
+
+科迈易通km300A-1 
+username: 
+password assword 
+
+科迈易通km300A-G 
+username:root 
+password:root 
+
+科迈易通km300A-A 
+username:root or admin 
+password:123456 
+
+sunrise的SR-DSL-AE 
+username:admin 
+password:0000 
+
+sunrise的DSL-802E_R3A 
+username:admin 
+password:epicrouter 
+username:user 
+password assword 
+
+UTStar的ut-300R 
+username:root or admin 
+password:utstar 
+目前各种ADSL的WEB设置用户名和密码
+
+伊泰克
+http://192.168.1.1/
+用户名：supervisor 密码：12345
+
+华硕
+http://192.168.1.1/
+用户名：adsl 密码：adsl1234
+
+etek td 2001 用户名：空 密码：12345
+
+asus 6000ev 
+一部分比较大那种,包括黑色和银灰色（现在的都使用这个，可能是升了FW）
+用户名：root 密码：root
+
+阿尔卡特(多数设备)
+http://10.0.0.138/ 一般没有密码
+
+阿尔卡特515 192.168.1.254
+
+同维DSL699E
+http://192.168.1.1/ 用户名：ROOT 密码：ROOT
+
+大亚DB102
+http://192.168.1.1/ 用户名：admin 密码：dare
+高级设置界面：http://192.168.1.1/doc/index1.htm
+
+WST的RT1080
+http://192.168.0.1/ username:root password:root
+
+WST的ART18CX
+http://10.0.0.2/
+username:admin password:conexant
+username:user password:password
+
+全向qxcomm1688
+http://192.168.1.1/
+高端设置密码是：qxcommsuport 
+全向qxcomm1680
+http://192.168.1.1/
+登陆ADSL的密码是:qxcomm1680
+ALT+A ALT+P
+
+实达
+V3.2　root
+root
+V5.4　root
+grouter
+
+泛德
+　admin
+conexant
+
+东信Ea700
+http://192.168.1.1/
+用户名：空
+密码：password
+
+broadmax的hsa300a
+http://192.168.0.1/
+username:broadmax
+password:broadmax
+
+长虹ch-500E
+http://192.168.1.1/
+管理员权限：
+username:admin
+password:1111
+user权限：
+username:root
+password:root
+
+重庆普天CP ADSL03
+http://192.168.1.1/
+username:root
+password:root
+
+台湾突破EA110
+RS232:38400
+http://192.168.7.1/
+usernameSL
+pswSL
+
+etek-td的ADSL_T07L006.0
+http://192.168.1.1/
+User Name: supervisor
+Password: 12345
+忘记密码的解决办法：
+使用超级终端的Xmodem方式重写Vxworks.dlf，密码恢复成：12345
+
+
+GVC的DSL-802E/R3A
+http://10.0.0.2/
+username:admin
+password:epicrouter
+username:user
+password:password
+
+科迈易通km300A-1
+http://192.168.1.1/
+username:
+password:password
+科迈易通km300A-G
+http://192.168.1.1/
+username:root
+password:root
+科迈易通km300A-A
+http://192.168.1.1/
+username:root or admin
+password:123456
+
+sunrise的SR-DSL-AE
+http://192.168.1.1/
+username:admin
+password:0000
+sunrise的DSL-802E_R3A
+http://10.0.0.2/
+username:admin
+password:epicrouter
+username:user
+password:password
+
+UTStar的ut-300R
+http://192.168.1.1/
+username:root or admin
+password:utstar
+
+珠海华声
+http://192.168.1.1/
+密码：0000
+（界面和东信EA700好像是一样的） 
+
+深圳的GREENNET
+username:root
+password:12345
+
+TP-Link 8830
+root
+root
+
+成都天邑100的
+用户名是admin　
+密码是epicrouter
+IP是10.0.0.2 
+
+深圳的GREENNET
+username:root
+password:12345
+
+珠海华声
+http://192.168.1.1/
+密码：0000
+（界面和东信EA700好像是一样的）
+
+TP-Link 8830
+root
+root
+
+D-LINK DSL-500 D-Link DSL-500
+192.168.0.1 也有人说是： 10.1.1.1 
+admin admin 
+admin admin
+
+华为MT800
+192.168.1.1
+admin
+admin
+
+实达系列ADSL MODEM：
+
+2110ehr v3.20 用户：admin 密码：conexant
+2110ehr v3.21 用户：admin 密码：conexant
+2110ehr v3.51 用户：admin 密码：conexant
+2110ehr v4.5 用户：root 密码：grouter
+2110eh v3.51 用户：admin 密码：starnetadsl （中文web界面）
+
+港湾(HA-1000)  用户名:admin  密码  :harbour 
+
+斯威特的，型号忘了，用户名/密码是admin/admin 
+
+home gateway 是实达的路由器用户名和密码是admin,starnetadsl 或者admin,conexant
+
+品牌:ViKing
+用户名:adsl 密码:adsl1234 或admin/admin
+品牌：实达 
+默认IP：192.168.10.1
+版本：2110ehr v3.20、 2110ehr v3.21、 2110ehr v3.51
+用户名：admin 密码：conexant
+版本：2110ehr v4.5
+用户名：root 密码：grouter 
+版本：2110eh v3.51（中文web界面）
+用户名：admin 密码：starnetadsl
+
+品牌：艾玛 
+默认IP：192.168.101.1
+用户名：admin 密码：admin
+
+品牌：神州数码/华硕
+用户名：adsl 密码：adsl1234
+
+品牌：全向
+用户名：root 密码：root
+
+品牌：普天
+用户名：putian 密码：123456
+
+品牌：e-tek 
+用户名:admin 密码:12345
+
+品牌：zyxel 
+用户名:anonymous密码:12345 or 1234
+
+品牌：北电 :
+用户名:anonymous 密码:12345
+
+品牌：大恒
+用户名：admin 密码：admin
+
+品牌：大唐
+用户名：admin 密码：1234
+
+品牌：斯威特 
+用户名：root 密码：root
+
+用户名：user 密码：user
+品牌：中兴
+
+用户名：adsl 密码：adsl831 
+品牌：BENQ 
+用户名：user 密码：benq1234 
+品牌：华硕  
+用户名：ADSL 密码：adsl1234 
+  
+ViKing 
+用户名:adsl 密码:adsl1234 
+实达 
+默认IP：192.168.10.1
+版本：2110ehr v3.20、 2110ehr v3.21、 2110ehr v3.51
+用户名：admin 密码：conexant
+  
+实达 2110ehr v4.5 
+用户名：root 密码：grouter
+
+实达 2110eh v3.51（中文web界面）
+用户名：admin 密码：starnetadsl
+
+艾玛
+默认IP：192.168.101.1
+用户名：admin 密码：admin 
+
+华硕
+http://192.168.1.1
+用户名：adsl 密码：adsl1234
+
+神州数码 DCAD-6010RA V6
+http://192.168.1.1
+用户名为ADSL，密码为ADSL1234
+
+神州数码 DCAD-6010RA V5
+192.168.1.1
+admin admin1234
+
+全向 QL1680
+在IE浏览器的地址栏里面敲入IP地址10.0.0.2  
+的用户名是admin出厂时默认值：密码是qxcomm1680，管理员密码是 qxcommsupport 
+全向 QL1688
+在IE浏览器的地址栏里面敲入IP地址10.0.0.2
+用户名为admin；出厂时默认值：密码为qxcomm1688
+
+全向 QL1880
+在IE浏览器的地址栏里面敲入IP地址192.168.1.1 
+用户名是root出厂时默认值：密码是root
+全向 qxcomm1688
+http://192.168.1.1  
+用户名为admin 高端设置密码是：qxcommsuport
+
+全向 qxcomm1680
+http://192.168.1.1/
+登陆ADSL的密码是:qxcomm1680
+普天 ISIN6161-RT 
+用户名：putian 密码：123456
+普天 ISIN6161-BE  
+用户名：putian 密码：123456
+重庆普天CP ADSL03 32V
+http://192.168.1.1 
+username:root  
+password:root 
+*昨稘
+etek-td ADSL_T07L006.0 
+http://192.168.1.1
+User Name: supervisor
+Password: 12345  
+忘记密码的解决办法：
+使用超级终端的Xmodem方式重写Vxworks.dlf，密码恢复成：12345
+
+合勤 zyxel 642 
+在运行输入telnet 192.168.1.1
+密码1234,一直按住机身后面的的RESET复位键然后开机，保持几十秒就可以恢复出厂默认
+  
+北电  
+用户名:anonymous 密码:12345
+
+大恒 
+用户名：admin 密码：admin
+
+大唐
+用户名：admin 密码：1234 
+斯威特
+用户名：root 密码：root
+用户名：user 密码：user
+
+中兴  
+ZXDSL831
+用户名:ZXDSL/adsl
+密码:zxdsl/adsl831   
+ZXDSL831B
+用户名:ZXDSL/adsl
+密码:zxdsl/adsl831
+  
+BEN
+用户名：user 密码：benq1234 
+伊泰克 
+http://192.168.1.1 
+用户名：supervisor
+密码：12345
+
+阿尔卡特
+http://192.168.1.1/
+一般没有密码
+
+义成(同维) DSL699E 699EA
+http://192.168.1.1
+用户名：ROOT
+密码：ROOT  
+大亚 DB102 DB108 K  
+http://192.168.1.1
+用户名：admin
+密码：dare
+高级设置界面：http://192.168.1.1/ doc/index1.htm  
+WST RT1080   
+http://192.168.0.1
+username:root
+password:root 
+WST ART18CX
+http://10.0.0.2
+username:admin 
+password:conexant
+username:user
+password ：password
+
+东信 Ea700 
+http://192.168.1.1
+用户名：空
+密码：password 
+broadmax hsa300a 
+http://192.168.0.1
+username:broadmax
+password:broadmax
+
+长虹 ch-500E 
+http://192.168.1.1
+username:root
+password:root
+  
+GVC DSL-802E/R3A
+http://10.0.0.2
+username:admin 
+password:epicrouter
+username:user
+password assword
+  
+科迈易通 km300A-1
+http://192.168.1.1
+username: password,command
+
+科迈易通 km300A-G 
+http://192.168.1.1
+username:root
+password:root
+  
+科迈易通 km300A-A 
+http://192.168.1.1
+username:root/admin 
+password:123456/root
+
+科迈易通 KM300A-AB
+192.168.1.1
+admin/root
+root/123456
+
+sunrise SR-DSL-AE 
+http://192.168.1.1 
+username:admin
+password:0000
+
+sunrise DSL-802E_R3A 
+http://10.0.0.2
+username:admin
+password:epicrouter
+username:user
+password assword
+
+UT斯达康 ut-300R  
+http://192.168.1.1
+username:root or admin 
+password:utstar
+
+CyberLink 6307/6309KG
+它使用在随Cyberlink6307/6309KG带的光盘中DSLCom.exe
+192.168.1.1密码 : stm ?e皚箿趠  
+
+TP-LINK TD-8800 
+192.168.1.1 
+admin admin
+
+Ecom ED-802EG 
+192.168.1.1 
+用户名和密码都为root
+
+神州数码 6010RA
+192.168.1.1
+用户名为ADSL，密码为ADSL1234
+
+华为Huawei SmartAX MT800
+初始IP是192.168.1.1 
+用户名ADMIN 密码admin/epicrouter
+恢复默认配置的方法有两种，一种是连续按MODEM背后的RESET键三 次  
+另一种是在配置菜单的SAVE&REBOOT里选择恢复默认配置。
+
+湖北邮通 
+IP:10.0.0.2 
+Username:admin 
+Password:epicrouter
+
+亨威NSM500网速通
+IP:192.168.1.1
+Username:root 
+Password:root
+
+SpeedTouch
+root root
+
+中达电通 CT500-B 
+root 12345
+
+中达电通 CT500-R
+root 12345
+
+天邑 HASB-100
+admin w(缺失)
+admin/epicrouter
+
+星网锐捷 ADSL2110EH
+192.168.10.1
+root/admin
+
+ADSL2110EH
+192.168.10.1 
+root/admin
+
+银河信息 AAM6000EV（华硕）
+192.168.1.1
+adsl adsl1234
+
+港湾网络 HA1000-TR 
+192.168.1.1 
+admin harbour
+
+格林耐特 GRT1500R GS8120/GS3780 
+192.168.1.1
+root 12345
+
+格林耐特 GRT1500 AD6485/AD6488
+192.168.1.1
+root 12345
+
+友讯电子有限公司 DSL-500 DSL-200 DSL-300
+192.168.1.1  
+admin admin   
+
+斯维特新 SLA8000D SLA8000 SVT508 
+192.168.1.1
+root root
+  
+探索者 KD318
+10.0.0.2
+admin conexant
+
+全创 AccessLinker 1100
+10.0.0.2 
+admin epicrouter
+
+世博资讯 2610 Conexant
+10.0.0.2   
+admin password
+
+金瑞迪 RA-800 Router
+192.168.1.1
+root 12345
+
+金瑞迪 RA-800 Modem
+192.168.1.1
+root 12345
+品牌：深圳的GREENNET
+username:root
+password:12345
+
+品牌：珠海华声
+[url]http://192.168.1.1/[/url]
+密码：0000
+（界面和东信EA700好像是一样的）
+
+品牌：TP-Link 8830
+root
+root
+
+品牌：D-LINK
+
+192.168.0.1 也有人说是： 10.1.1.1 
+admin admin 
+admin 空
+
+品牌：华为MT800
+192.168.1.1
+admin
+admin
+
+品牌：实达系列ADSL MODEM：
+
+2110ehr v3.20 用户：admin 密码：conexant
+2110ehr v3.21 用户：admin 密码：conexant
+2110ehr v3.51 用户：admin 密码：conexant
+2110ehr v4.5 用户：root 密码：grouter
+2110eh v3.51 用户：admin 密码：starnetadsl （中文web界面）
+
+品牌：港湾(HA-1000) 用户名:admin 密码 :harbour
+
+品牌：斯威特的，型号忘了，用户名/密码是admin/admin
+
+品牌：home gateway 是实达的路由器用户名和密码是admin,starnetadsl 或者admin,conexant
+
+品牌：Cisco Linksys BEFSX41
+192.168.0.1
+name：（空）
+pass：admin
+
+
+品牌:RockRouter
+
+guest/guest
+
+CyberGuard 设备默认的用户名：root 
+默认的密码：default
+
+
+MikroTik
+
+
+帐号admin密码是空的
+
+
+
+draytek
+
+Login to the Router Web Configurator
+
+admin/空
+
+
+上海思波/sibo/Home Gateway:
+
+user/password
+
+
+GlobespanVirata/Titanium:
+
+root/root
+
+
+ADSL Router 密码:貌似上海adsl:
+
+admin/admin
+
+
+EchoLife HG520s:(huawei/华为)
+
+admin/admin
