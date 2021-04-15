@@ -8,6 +8,8 @@
 .conf
 .xml
 .swp
-~
-/
-
+.bak
+.asp
+.php
+.jsp
+.aspx

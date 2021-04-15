@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-f3=open("F.lst",'w')
+f3=open("sfz4.txt",'w')
 num_lst=range(0,10)
 last_lst = [str(i) for i in num_lst] 
 last_lst.append('x')

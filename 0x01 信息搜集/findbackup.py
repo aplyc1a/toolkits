@@ -27,7 +27,7 @@ def get_code_status(targets):
                         code = res.status_code
                         send_url=res.url
                     except Exception as error:
-                        pass
+                        continue
                     print("{%03d:%s} %d" %(code,send_url,len(res.text)))
                     if code == 200:
                         f3 = open('200.txt',"a+",encoding="utf-8")

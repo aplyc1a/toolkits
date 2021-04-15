@@ -1,5 +1,4 @@
 web
-web.xml
 all
 data
 1
@@ -11,13 +10,9 @@ upload
 www-data
 www-root
 新建文件夹
-config.asp
 config
-config.jsp
-config.php
-config.aspx
-config.asp
-config.txt
 src
-.hg
 WEB-INF
+bin
+login
+auth
