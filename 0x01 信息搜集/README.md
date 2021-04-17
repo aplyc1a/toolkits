@@ -1,5 +1,5 @@
 
-![信息收集](https://github.com/aplyc1a/toolkits/blob/master/0x01\ 信息搜集/信息收集.png)
+![信息收集](https://github.com/aplyc1a/toolkits/blob/master/0x01 信息搜集/信息收集.png)
 
 **图示说明**：
 
