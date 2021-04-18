@@ -1,11 +1,11 @@
-for hostip in {0..210};
+#!/bin/bash
+for host in `cat ./host.txt`;
 do
-    ip="170.$hostip.3.4"
-        ping -c 1 -W 2 $ip &> /dev/null
+    ping -c 1 -W 2 $host &> /dev/null
     if [ "$?" == "0" ];then
-        echo $ip is UP
+        echo $host is UP
         #break;
     else
-        echo $ip is DOWN
+        echo $host is DOWN
     fi
-done
+done 

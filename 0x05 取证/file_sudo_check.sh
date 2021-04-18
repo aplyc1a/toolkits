@@ -11,4 +11,3 @@ do
         echo -ne "owner[f]:\"${fname_owner}\" [d]=\"${fdir_owner}\" ... \"${fname}\"\n";
     fi
 done
-

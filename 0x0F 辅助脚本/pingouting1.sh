@@ -28,4 +28,3 @@ pingouting(){
 
 pingouting $1 $2
 #./pingouting1.sh /etc/passwd 192.168.0.2
-
