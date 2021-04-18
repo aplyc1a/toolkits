@@ -11,14 +11,12 @@ def findIPs(ip_section, ch):
 
 def transfrom_ip(ip_section,ch):
     ip_section=list(ip_section.split('.'))
-    for i in ip_section:
-        if ch in i:
-            break
-    MAX=i
+    
     i=0
     ip_hdr=''
-    while i<MAX:
+    while i<3:
         ip_hdr=ip_hdr+ip_section[i]+'.'
+        i+=1
     ip_range=list(ip_section[i].split(ch))
     for i in range(int(ip_range[0]),int(ip_range[1])):
         fw.write("%s%d\n" %(ip_hdr,i))
@@ -45,16 +43,16 @@ if __name__ == '__main__':
     print("[+] Working...\n")
     for line in fr:
         line=line.replace('\n','').replace('\r','')
+        if '—' in line:
+            if line.count('.') == 3:
+                transfrom_ip(line,'—')
+                continue
+            findIPs(line,'-')
         if '-' in line:
-            if line.count('.')<6:
+            if line.count('.') == 3:
                 transfrom_ip(line,'-')
                 continue
             findIPs(line,'-')
-        if '—' in line:
-            if line.count('.')<6:
-                transfrom_ip(line,'—')
-                continue
-            findIPs(line,'—')
         if '/' in line:
             transformIPFrom_netmask(line)
             continue
