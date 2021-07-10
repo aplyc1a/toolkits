@@ -1,4 +1,5 @@
-#file_sudo_check.sh
+#!/bin/bash
+#owner_check.sh
 find / -type f 2>/dev/null |sed 's/\\/\\\\/g'| while read f;
 do
     fname=${f};
