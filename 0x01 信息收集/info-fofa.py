@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
+## pip3 install urllib3
 
 '''
 pip3 install urllib3
 使用前先填入自己的用户名及API-Key
 '''
+
+
 import base64
 import json
 import sys
@@ -18,6 +21,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 # 分别填入账户及API-Key
 uname = 
 ukey  = 
+
 
 def do_search(query_key):
     query_url = "https://fofa.so/api/v1/search/all?email=%s&key=%s&qbase64=%s&size=100&fields=host,title,ip,domain,port,country,city" %(uname,ukey,base64.b64encode(query_key.encode('utf8')).decode())
@@ -41,18 +45,30 @@ def do_search(query_key):
     Q_size = req_dic.get("size")
     
     print('[+] query_keyword:"%s" ; query_page:%d ; fetch_result num:%d' %(Q_key,Q_page,Q_size))
-    fp.write('"host","title","ip","domain","port","country","city","fofa_query_key"\n')
+    fp.write('"fofa_query_key","host","ip","port","domain","subdomain","country","city","title"\n')
     res_list = req_dic.get("results")
     for res in res_list:
-        fp.write('"%s","%s","%s","%s","%s","%s","%s","%s"\n' %(res[0],res[1],res[2],res[3],res[4],res[5],res[6],query_key))
+        subdomain = res[0].strip('http://').strip('https://').split(':')[0]
+        fp.write('"%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' \
+            %(query_key.replace("\"","\"\""),
+            res[0],
+            res[2],
+            res[4],
+            res[3],
+            subdomain,
+            res[5],
+            res[6],
+            res[1].encode('utf-8')\
+            ))
         print("%s:%s" %(res[2],res[4]))
     fp.close()
     
 
 if __name__ == "__main__":
-    with open("fofa-item.txt", 'r', encoding='utf-8') as rf:
+    print(sys.getdefaultencoding())
+    with open("fofa.txt", 'r', encoding='utf-8') as rf:
         for line in rf:
-            print("[Fofa-Query] => \"%s\"" %line.strip('\n').strip('\r'))
+            print("[Fofa-Query] => '%s'" %line.strip('\n').strip('\r'))
             do_search(line.strip('\n').strip('\r'))
             print("-"*80)
             time.sleep(1)
