@@ -1,91 +1,121 @@
 # -*- coding: utf-8 -*-
-# @aplyc1a。使用前先填入自己的用户名及API-Key
+
 import json
 import time
 import requests
 import pprint
 
-'''
-censys网上说一共有以下6种API接口：search、view、report、query、export、data。对普通用户而言，censys有查询限制。
-本工具只实现了search接口。search在网页版上提供IP/certificates/website三种检索模式。
-分别对应于
-https://censys.io/api/v1/search/ipv4
-https://censys.io/api/v1/search/certificates
-https://censys.io/api/v1/search/website
+APIV1_URL = "https://search.censys.io/api/v1"
+APIV2_URL = "https://search.censys.io/api/v2"
 
-下面给出一些支持使用的search关键字：
-location.country_code: DE
-protocols: ("23/telnet" or "21/ftp")
-80.http.get.headers.server: Apache
-80.http.get.status_code: 200
-80.http.get.status_code:[400 TO 500]
-80.http.get.headers.server：nginx
-tags: scada
-autonomous_system.description: University
-weblogic and location.country_code: CN
-23.0.0.0/8 or 8.8.8.0/24
-'''
 
-API_URL = "https://censys.io/api/v1"
 UID = ""
 SECRET = ""
+QUERY_NUM = 50 # 定义请求获得的最大条目数
 
-columns = { 'ip' : 'ip', 
-            'protocols' : 'protocols', 
-            'country' : 'location.country',
-            'city' : 'location.city', 
-            'country_code' : 'location.country_code',
-            'asn' : 'autonomous_system.asn',
-            'name' : 'autonomous_system.name',
-            'organization' : 'autonomous_system.organization'
-}
-
-def censys_search(query_key):
-    page = 1
+def censys_certificate_search(query_key):
+    page = 0
     num_retries = 5
+    count = 1
     while num_retries > 0:
+        page = page + 1
         data = {
                 "query": query_key,
                 "page": page,
-                "fields": [columns['ip'],columns['protocols'],columns['country'],columns['city'], 
-                        columns['country_code'],columns['asn'],columns['name'],columns['organization']],
+                "fields": [ "parsed", "ct", "raw"],
                 "flatten":True
         }
+        headers = {
+            "accept": "application/json",
+            "User-Agent":"User-Agent,Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
+        }
         try:
-            res = requests.post(API_URL + "/search/ipv4", data=json.dumps(data), auth=(UID, SECRET))
+            fp = open('censys-apisearch.txt','a+',encoding='utf-8')
+            # APIManual https://search.censys.io/api#/certificates/searchCertificates
+            res = requests.post(APIV1_URL + "/search/certificates", headers=headers, data=json.dumps(data), auth=(UID, SECRET))
             result = res.json()
             if result['status'] == 'error':
                 if "You have used your full quota for this billing period" in str(result):
                     print("[-]You have used your full quota for this billing period. Please see https://censys.io/account/billing or contact support@censys.io.")
                 break
                 
-            #print(result["results"])
-            #pprint.pprint(result["results"])
-            #print(result["metadata"])
             for i in result["results"]:
-            
-                #print(i)
-                
-                print("")
                 pprint.pprint(i)
+                fp.write(str(i)+"\r\n")
+                fp.flush()
+                count+=1
                 
-                # 打印所有的查询结果项
-                #for j in i.keys():
-                #    print("\"%s\"\t" %(i[j]), end=" " )
-                #    print("")
-                
-                # 只打印 IP和协议
-                #print("%s %s" %(i[columns['ip']],i[columns['protocols']]))
             num_retries = 5
-            page = page + 1
+            if count >= QUERY_NUM:
+                break
         except Exception as e:
             print(e)
             num_retries=num_retries-1
+        finally:
+            fp.close()
+
+def censys_host_search(query_key):
+    page = 0
+    per_page_num=5
+    num_retries = 3
+    count = 1
+    cursor_next = ""
+    
+    while num_retries > 0:
+        page = page + 1
+        try:
+            fp = open('censys-apisearch.txt','a+',encoding='utf-8')
+            # APIManual https://search.censys.io/api#/hosts/searchHosts
+            query_url = "%s/hosts/search?q=%s&per_page=%d&cursor=%s" %(APIV2_URL,query_key,per_page_num,cursor_next)
+            #print(query_url)
+            headers = {
+                "accept": "application/json",
+                "User-Agent":"User-Agent,Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
+            }
+            res = requests.get(query_url, headers=headers, auth=(UID, SECRET))
+            result = res.json()
+            if result['code'] != 200:
+                print("[-] code:%s", str(result['code']))
+                break  #
+            if result['status'] == 'error':
+                if "You have used your full quota for this billing period" in str(result):
+                    print("[-] You have used your full quota for this billing period. Please see https://censys.io/account/billing or contact support@censys.io.")
+                break
+            cursor = result["result"]["links"]
+            cursor_next = cursor["next"]
+            for i in result["result"]["hits"]:
+                pprint.pprint(i)
+                fp.write(str(i)+"\r\n")
+                fp.flush()
+                count+=1
+                
+            num_retries = 5
+            
+            if count >= QUERY_NUM:
+                break
+        except Exception as e:
+            print(e)
+            fp.close()
+            num_retries=num_retries-1
+        finally:
+            fp.close()
+    if num_retries == 0:
+        print("[-] Fetch max retries times.")
 
 if __name__ == '__main__':
-    with open("censys-item.txt", 'r', encoding='utf-8') as rf:
+
+    with open("censys.txt", 'r', encoding='utf-8') as rf:
         for line in rf:
-            print("[censys-Query] => \"%s\"" %line.strip('\n').strip('\r'))
-            censys_search(line.strip('\n').strip('\r'))
+            query_item = line.strip('\n').strip('\r')
+            print("[Censys-Query] => \"%s\"" %query_item)
+            censys_certificate_search(query_item)
+            censys_host_search(query_item)
             print("-"*80)
             #time.sleep(1)
+'''
+    with open('censys-apisearch.txt', 'r',encoding='utf-8') as f:
+        data=str(f.readlines())
+        for i in data.split():
+            if 'xxx.com' in i:
+                print(i)
+'''
