@@ -48,7 +48,7 @@ def do_search(query_key):
     fp.write('"fofa_query_key","host","ip","port","domain","subdomain","country","city","title"\n')
     res_list = req_dic.get("results")
     for res in res_list:
-        subdomain = res[0].strip('http://').strip('https://').split(':')[0]
+        subdomain = res[0].replace("http://","").strip("https://","").split(':')[0]
         fp.write('"%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' \
             %(query_key.replace("\"","\"\""),
             res[0],
