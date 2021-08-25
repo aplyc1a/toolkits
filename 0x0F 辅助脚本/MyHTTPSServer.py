@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2021-08-25
+# @Author  : aplyc1a
+# @FileName: MyHTTPServer.py
+
 # openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes
 
 # Linux
@@ -19,9 +24,10 @@ import optparse
 import cgi
 import pprint
 import datetime
+import os
 
-log_file = "c2.log"
-
+log_file = "./log90f6a6359a2a3471022cbba/access.log"
+WORK_SPACE = "./html"
 class MyHTTPSServer(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path[-1] == '/':
@@ -33,6 +39,7 @@ class MyHTTPSServer(http.server.SimpleHTTPRequestHandler):
             f.write("------------------------------------------------\n")
             content = "%s - - [%s] \"%s %s HTTP/1.1\" ??? -" %(self.address_string(), timenow, self.command, self.path)
             f.write(content+"\n")
+            f.write(str(self.headers))
             f.close()
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
 
@@ -49,19 +56,6 @@ class MyHTTPSServer(http.server.SimpleHTTPRequestHandler):
             f.write(req_datas.decode())
             f.close()
         print(content)
-        # send ?
-        '''
-        data= {
-            'result_code':'2',
-            'result_desc':'Success',
-            'timestamp': '',
-            'data': {'message_id':'25d55ad283aa400af464c76d713c07ad'}
-        }
-        self.send_response(200)
-        self.send_header('Content-type','application/json')
-        self.end_headers()
-        self.wfile.write(json.dumps(data).encode('utf-8'))
-        '''
         return
         
 def show_banner():
@@ -76,13 +70,13 @@ def main():
     parser.add_option('-p', '--port', dest = 'port', type = 'string', help = 'set port of https service.')
     (options,args) = parser.parse_args()
     port=options.port
-    
-    Handler = MyHTTPSServer
 
-    httpd = http.server.HTTPServer(('0.0.0.0', int(port)), Handler)
+    httpd = http.server.HTTPServer(('0.0.0.0', int(port)), MyHTTPSServer)
     httpd.socket = ssl.wrap_socket(httpd.socket, certfile='server.pem', server_side=True)
+    os.chdir("./html")
+    show_banner()
     httpd.serve_forever()
 
 if __name__ == '__main__':
-    show_banner()
+    
     main()
