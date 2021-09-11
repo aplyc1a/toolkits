@@ -30,7 +30,7 @@ def dig_domain(domain, dns, csv_obj):
     record_type="Err"
     #print(result)
     for i in result:
-        responce_item=i.split('\t')
+        responce_item=i.replace('  ',' ').replace('  ',' ').replace(' ','\t').split('\t')
         record_domain=responce_item[0][:-1]
         if record_domain==domain:
                 if "IN" in responce_item[2]:
