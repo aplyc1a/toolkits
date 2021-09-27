@@ -9,9 +9,10 @@ root: chmod 755 /home/aplyc1a/escal/1.sh
 
 ```shell
 #!/bin/bash
+
 set -x
 if [ $1 = "aaa" ];then
-    cmd = "$2 $3"
+    cmd="$2 $3"
     eval $cmd
     exit $?
 fi
@@ -27,6 +28,7 @@ aplyc1a:sudo ./1.sh aaa su -
 
 ```shell
 #!/bin/bash
+
 set -x
 if [ $1 = "aaa" ];then
     chown aplyc1a:aplyc1a $2/log.sh
@@ -47,6 +49,7 @@ root在aplyc1a家目录下创建3.sh内容如下：
 
 ```shell
 #!/bin/bash
+
 ${1}/log.sh
 ```
 
