@@ -19,16 +19,18 @@ ukey  = ""
 def do_search(query_key):
     query_url = "https://fofa.so/api/v1/search/all?email=%s&key=%s&qbase64=%s&size=100&fields=host,title,ip,domain,port,country,city" %(uname,ukey,base64.b64encode(query_key.encode('utf8')).decode())
     req = request.Request(query_url)
-    MAX_RETRIES=5
+    MAX_RETRIES=3
     i=0
     while i<MAX_RETRIES:
         try:
             req_obj = request.urlopen(req)
             break
         except:
-            printf("Retrying...")
             i+=1
-    
+            if MAX_RETRIES == i:
+                print("[-] Fetched the max retry times.")
+                exit(1)
+            print("Retrying...")
     req_str = req_obj.read()
     req_obj.close()
     req_dic = json.loads(req_str)
@@ -41,7 +43,7 @@ def do_search(query_key):
     fp.write('"fofa_query_key","host","ip","port","domain","subdomain","country","city","title"\n')
     res_list = req_dic.get("results")
     for res in res_list:
-        subdomain = res[0].replace('http://','').strip('https://','').split(':')[0]
+        subdomain = res[0].replace('http://','').replace('https://','').split(':')[0]
         fp.write('"%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' \
             %(query_key.replace("\"","\"\""),
             res[0],
