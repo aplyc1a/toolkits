@@ -7,7 +7,7 @@ import platform
 
 def digger(domain, csv_obj):
     # China
-    DNSS=["114.114.114.114","8.8.8.8","223.5.5.5"]
+    DNSS=["114.114.114.114","8.8.8.8","223.5.5.5","119.29.29.29"]
     # Foreign
     #DNSS=["8.8.8.8","8.8.4.4","199.85.126.10","208.67.222.222","84.200.69.80","8.26.56.26","192.95.54.3","1.1.1.1"]
     result=[]
@@ -28,9 +28,8 @@ def dig_domain(domain, dns, csv_obj):
     result=response.split('\n')
     result.remove('')
     record_type="Err"
-    #print(result)
     for i in result:
-        responce_item=i.split('\t')
+        responce_item=i.split()
         record_domain=responce_item[0][:-1]
         if record_domain==domain:
                 if "IN" in responce_item[2]:
@@ -42,10 +41,9 @@ def dig_domain(domain, dns, csv_obj):
                 if record_type=="CNAME":
                     record=[domain, dns, "CNAME", record_substr[1][:-1]]
                 elif record_type=="MX":
-                    record=[domain, dns, "MX", record_substr[1].split()[1][:-1]]
+                    record=[domain, dns, "MX", record_substr[1][:-1]]
                 elif record_type=="SOA":
-                    SOA_record=record_substr[1].split(' ')
-                    record=[domain, dns, "SOA", "%s,%s" %(SOA_record[0][:-1],SOA_record[1][:-1])]
+                    record=[domain, dns, "SOA", "%s,%s" %(record_substr[1][:-1],record_substr[2][:-1])]
                 elif record_type=="TXT":
                     pattern = re.compile(r"\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b")
                     trueIp = pattern.findall(record_substr[1])
